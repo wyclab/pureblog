@@ -1,5 +1,6 @@
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import AstroPureIntegration from 'astro-pure'
+import edgeone from '@edgeone/astro'
 import { defineConfig, fontProviders } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
@@ -40,7 +41,8 @@ export default defineConfig({
   // [Adapter]
   // https://docs.astro.build/en/guides/deploy/
 
-  output: 'static',
+  output: 'static', // 如果需要 SSR(服务端渲染)，请改为 'server' 或 'hybrid'
+  adapter: edgeone(),
   // Local (standalone)
   // adapter: node({ mode: 'standalone' }),
   // output: 'server',
