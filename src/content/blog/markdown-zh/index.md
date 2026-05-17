@@ -124,8 +124,6 @@ $$
 
 预览：
 
-![CWorld](https://gravatar.loli.net/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200)
-
 #### 删除线
 
 ```markdown
