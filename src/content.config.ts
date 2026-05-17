@@ -57,4 +57,21 @@ const docs = defineCollection({
     })
 })
 
-export const collections = { blog, docs }
+
+// 添加我的新文档
+const healthdoc = defineCollection({
+  loader: glob({ base: './src/content/healthdoc', pattern: '**/*.{md,mdx}' }),
+  schema: () =>
+    z.object({
+      title: z.string().max(60),
+      description: z.string().max(160),
+      publishDate: z.coerce.date().optional(),
+      updatedDate: z.coerce.date().optional(),
+      tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+      draft: z.boolean().default(false),
+      // Special fields
+      order: z.number().default(999)
+    })
+})
+
+export const collections = { blog, docs, healthdoc }
