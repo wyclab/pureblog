@@ -1,6 +1,7 @@
 ### Astro ###
 dist/
 .astro/
+.edgeone
 
 ### Vercel ###
 .vercel/
