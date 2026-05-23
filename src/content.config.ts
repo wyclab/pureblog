@@ -58,7 +58,7 @@ const docs = defineCollection({
 })
 
 
-// 添加我的新文档
+// 添加健康文档
 const healthdoc = defineCollection({
   loader: glob({ base: './src/content/healthdoc', pattern: '**/*.{md,mdx}' }),
   schema: () =>
@@ -74,7 +74,7 @@ const healthdoc = defineCollection({
     })
 })
 
-// 添加生态文档
+// 添加置身事内文档
 const ecodoc = defineCollection({
   loader: glob({ base: './src/content/ecodoc', pattern: '**/*.{md,mdx}' }),
   schema: () =>
@@ -90,4 +90,20 @@ const ecodoc = defineCollection({
     })
 })
 
-export const collections = { blog, docs, healthdoc, ecodoc }
+// 添加AI笔记
+const aidoc = defineCollection({
+  loader: glob({ base: './src/content/aidoc', pattern: '**/*.{md,mdx}' }),
+  schema: () =>
+    z.object({
+      title: z.string().max(60),
+      description: z.string().max(160),
+      publishDate: z.coerce.date().optional(),
+      updatedDate: z.coerce.date().optional(),
+      tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+      draft: z.boolean().default(false),
+      // Special fields
+      order: z.number().default(999)
+    })
+})
+
+export const collections = { blog, docs, healthdoc, ecodoc, aidoc }

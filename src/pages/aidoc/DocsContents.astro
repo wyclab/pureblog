@@ -7,7 +7,7 @@ import { cn } from 'astro-pure/utils'
 export const prerender = true
 export const partial = true
 
-const docsCollection = (await getBlogCollection('docs')) as CollectionEntry<'docs'>[]
+const docsCollection = (await getBlogCollection('aidoc')) as CollectionEntry<'aidoc'>[]
 // Group docs by id first part (setup, integrations, advanced, etc.)
 const docsByCate = docsCollection.reduce((acc: { [key: string]: typeof docsCollection }, doc) => {
   const id = doc.id.split('/')[0]
@@ -17,11 +17,10 @@ const docsByCate = docsCollection.reduce((acc: { [key: string]: typeof docsColle
 }, {})
 
 const docCategories = {
-  bjtown: '北京通',
-  nextgen: '养娃',
-  homeassist: '智能生活',
-  tools:'生产力'
-
+  macro: '宏观观察',
+  gov: '政府城投',
+  company:'企业观察',
+  invest:'投资笔记'
 }
 
 type Props = {
@@ -33,18 +32,18 @@ const { title = true, class: className, ...props } = Astro.props
 ---
 
 <docs-toc class={cn('not-prose', className)} {...props}>
-  {title && <h2 class='text-foreground font-medium'>DOCS</h2>}
+  {title && <h2 class='text-foreground font-medium'>AI笔记</h2>}
   <ul class='mt-4 flex flex-col gap-y-5'>
     {
       Object.entries(docCategories).map(([id, title]: [string, string]) => (
         <li>
           <h3 class='text-muted-foreground text-xs tracking-widest uppercase'>{title}</h3>
           <ul class='mt-2 flex flex-col'>
-            {docsByCate[id]
+            {(docsByCate[id] || [])
               .sort((a, b) => a.data.order - b.data.order)
               .map((doc) => (
                 <li class='docs-item flex relative ms-2 px-3 py-1 text-foreground/75 transition-all rounded-2xl'>
-                  <a class='flex-1 hover:text-foreground' href={`/docs/${doc.id}`}>
+                  <a class='flex-1 hover:text-foreground' href={`/aidoc/${doc.id}`}>
                     {doc.data.title}
                   </a>
                 </li>
