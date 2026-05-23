@@ -9,7 +9,7 @@ export const theme: ThemeUserConfig = {
   /** Description metadata for your website. Can be used in page metadata. */
   description: '看似无用，实则真的无用。热爱驱动探索，趣味解构世界。',
   /** The default favicon for your site which should be a path to an image in the `public/` directory. */
-  favicon: '/favicon/catwyc.jpg',
+  favicon: '/favicon/favicon.ico',
   /** The default social card image for your site which should be a path to an image in the `public/` directory. */
   socialCard: '/images/social-card.png',
   /** Specify the default language for this site. */
@@ -119,7 +119,7 @@ export const integ: IntegrationUserConfig = {
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
       { name: 'Link', val: 'https://wyclab.com/' },
-      { name: 'Avatar', val: 'https://wyclab.com/img/avatars/doggo-corgi.jpg' }
+      { name: 'Avatar', val: 'https://wyclab.com/src/assets/catwyc-laege.jpg' }
     ],
     // Cache avatars in `public/avatars/` to improve user experience.
     cacheAvatar: false

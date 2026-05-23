@@ -2,9 +2,36 @@
 layout: '@/layouts/IndividualPage.astro'
 
 title: 'Copyright'
-description: 'Effective date: 2024-11-26'
-language: 'En'
+description: '最后更新: 2026-5-23'
+language: 'zh'
 back: '/terms/list'
 ---
 
-It may be recommended to generate policies from [PolicyMaker.io](https://policymaker.io).
+# 版权声明
+
+本站（**无用处实验室**，网址：[wyclab.com](https://wyclab.com/)）的所有原创内容，包括但不限于文字、图片、代码及页面排版设计，除特别注明外，均受版权法保护。
+
+为了促进知识的分享与传播，本站内容采用以下授权协议：
+
+## 1. 原创内容授权 (CC BY-NC-SA 4.0)
+
+本站所有原创文章及内容均采用 **[知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议 (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)** 进行许可。
+
+在遵守以下条件的前提下，您可以自由地转载、修改和分享本站内容：
+* **署名 (Attribution)**：您必须给出适当的署名，提供指向本站对应文章的链接，并明确指出是否对原始内容进行了修改。
+* **非商业性使用 (Non-Commercial)**：您不得将本站内容用于任何商业目的。
+* **相同方式共享 (Share-Alike)**：如果您对本站内容进行了再创作、修改或转换，您必须使用与本站相同的协议分发您的贡献。
+
+## 2. 网站代码授权
+
+本站基于开源项目构建。本站中由个人编写或修改的代码，除另有声明外，均遵循 **[MIT 许可证](https://opensource.org/licenses/MIT)**。您可以自由使用、修改和分发代码，但需保留原作者的版权声明。
+
+## 3. 免责声明
+
+* 本站部分引用、翻译或转载的第三方内容，版权归原作者所有。若有任何侵权行为，请联系站长进行处理，我们会在第一时间删除或修改相关内容。
+* 本站所载的全部信息仅供参考。因使用本站内容而产生的任何直接或间接后果，本站不承担任何法律责任。
+
+## 4. 联系与授权
+
+如果您需要将本站内容用于商业用途，或有其他定制授权需求，请与我联系：
+* 网站主页：[wyclab.com](https://wyclab.com/)
