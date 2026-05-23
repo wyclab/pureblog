@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import { PostPreview } from 'astro-pure/components/pages'
+import PostPreview from '@/components/PostPreview.astro'
 import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
 import { Button, Card, Icon, Label } from 'astro-pure/user'
 import PageLayout from '@/layouts/BaseLayout.astro'
@@ -89,7 +89,7 @@ if (!images[imagePath])
                 </li>
               ))}
             </ul>
-            <Button title='更多文章' class='w-fit self-end' href='/blog' variant='ahead' />
+            <Button title='更多文章' class='w-fit self-end' href='/posts' variant='ahead' />
           </Section>
         )
       }

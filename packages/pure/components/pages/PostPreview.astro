@@ -30,18 +30,18 @@ const postDate = data.updatedDate ?? data.publishDate
       detailed && 'max-sm:px-4 sm:py-5',
       detailed && data.heroImage && 'max-md:pt-24'
     )}
-    href={`/blog/${id}`}
+    href={`/posts/${id}`}
     data-astro-prefetch
   >
     {
       detailed && data.heroImage && (
-        <Image
-          alt={data.heroImage.alt || data.title}
-          class='cover-image absolute end-0 top-0 z-0 h-2/3 w-full rounded-2xl object-cover opacity-50 transition-opacity duration-300 group-hover:opacity-70 md:h-full md:w-3/5'
-          loading='eager'
+          <Image
+            alt={data.heroImage.alt || data.title}
+            class='cover-image absolute end-0 top-0 z-0 h-2/3 w-full rounded-2xl object-cover opacity-50 transition-opacity duration-300 group-hover:opacity-70 md:h-full md:w-3/5'
+            loading='eager'
           {...data.heroImage}
-        />
-      )
+          />
+        )
     }
     <div
       class={cn('relative flex flex-col gap-1', !detailed && 'sm:flex-row sm:items-center')}
