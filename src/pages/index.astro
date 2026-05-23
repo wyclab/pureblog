@@ -13,7 +13,7 @@ import config from '@/site-config'
 // const frontend = ['TypeScript', 'Vite', 'Webpack', 'Astro']
 // const backend = ['Vercel', 'Waline']
 
-const MAX_POSTS = 10
+const MAX_POSTS = 5
 const allPosts = await getBlogCollection()
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
@@ -153,25 +153,25 @@ if (!images[imagePath])
             href='/docs'
             heading='生活攻略'
             subheading='人生就是游戏，游戏需要攻略'
-            imagePath='/src/assets/projects/1.avif'
+            imagePath='/src/assets/projects/lifedoc.jpg'
           />
           <ProjectCard
             href='/healthdoc'
             heading='健康记'
             subheading='健康最有用，平平无奇的健身记录'
-            imagePath='/src/assets/projects/2.avif'
+            imagePath='/src/assets/projects/health.jpg'
           />
           <ProjectCard
             href='/ecodoc'
             heading='置身事内'
             subheading='置身事内，理解中国'
-            imagePath='/src/assets/projects/3.avif'
+            imagePath='/src/assets/projects/eco.jpg'
           />
           <ProjectCard
             href='/aidoc'
             heading='AI笔记'
-            subheading='AI助手，智能笔记'
-            imagePath='/src/assets/projects/4.avif'
+            subheading='AI改变世界'
+            imagePath='/src/assets/projects/ai.jpg'
           />
           <ProjectCard
             href='/projects'
