@@ -1,6 +1,7 @@
 ---
-title: 体态
-slug: health/posture
+title: '体态'
+description: '保持日常体态'
+order: 1
 ---
 
 
