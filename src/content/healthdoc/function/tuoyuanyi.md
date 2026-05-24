@@ -1,7 +1,7 @@
 ---
 
 title: '椭圆仪（有氧）'
-description: '椭圆仪shi'yong'
+description: '椭圆仪使用指南'
 order: 1
 ---
 
