@@ -26,7 +26,7 @@ export const theme: ThemeUserConfig = {
   },
   /** Set a logo image to show in the homepage. */
   logo: {
-    src: '/src/assets/catwyc-laege.jpg',
+    src: '/src/assets/logo.png',
     alt: 'Avatar'
   },
 
@@ -48,7 +48,7 @@ export const theme: ThemeUserConfig = {
   /** Configure the header of your site. */
   header: {
     menu: [
-      { title: '博客', link: '/posts' },
+      { title: '文章', link: '/posts' },
       // { title: '文档', link: '/docs' },
       { title: '项目', link: '/projects' },
       { title: '链接', link: '/links' },
