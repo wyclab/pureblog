@@ -17,8 +17,10 @@ const docsByCate = docsCollection.reduce((acc: { [key: string]: typeof docsColle
 }, {})
 
 const docCategories = {
-  setup: 'Setup',
-  advanced: 'Advanced'
+  BASIC: '基础知识',
+  DAILY: '日常习惯',
+  function: '功能性训练',
+  strength: '力量训练'
 }
 
 type Props = {
