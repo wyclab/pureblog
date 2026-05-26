@@ -27,5 +27,5 @@ draft: false
 
 更多政策文件详见
 
-[文档传送门](https://doc.wyc.cc/invest/zhengfutouzi/)
+[文档传送门](https://wyclab.com/ecodoc/gov/gov_invest)
 
