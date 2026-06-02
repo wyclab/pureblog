@@ -11,8 +11,8 @@ import ProjectSection from '@/components/projects/ProjectSection.astro'
 // import wechat from '@/assets/wechat-qrcode.jpg'
 
 const headings = [
-  { depth: 2, slug: '文档库', text: '文档库' },
-  { depth: 2, slug: 'learnings', text: 'Learnings' },
+  { depth: 2, slug: 'doc', text: '无用文档' },
+  { depth: 2, slug: 'vibecoding', text: '无用代码' },
   { depth: 2, slug: 'others', text: 'Others' }
 ]
 ---
@@ -49,7 +49,7 @@ const headings = [
 */}
 
 
-  <h2 id='文档库'>文档库</h2>
+  <h2 id='dco'>无用文档库</h2>
   <ProjectSection
     projects={[
       {
@@ -114,16 +114,16 @@ const headings = [
     />
   </Collapse>
 
-  <h2 id='learnings'>网站</h2>
+  <h2 id='vibecoding'>无用代码</h2>
   <ProjectSection
     class='my-2'
     projects={[
       {
         name: 'Reits全景分析',
-        description: 'Some notes and code about learning R language',
+        description: '基于REITs公告的产业园等底层资产运营情况监测、分析',
         links: [
-          { type: 'github', href: 'https://github.com/cworld1/r-learning' },
-          { type: 'site', href: 'https://cworld1.github.io/r-learning' }
+          //{ type: 'github', href: 'https://github.com/cworld1/r-learning' },
+          { type: 'site', href: 'https://reits.wyclab.com' }
         ]
       },
       {
