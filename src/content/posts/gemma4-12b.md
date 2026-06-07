@@ -33,7 +33,7 @@ heroImage: { src: 'https://static.wyclab.com/gemma-4_blog_keyword_meta-dark.widt
 
 ### 3. 内存占用实测
 
-实测MacBook Air M5 16GB，内存占用大约8GB-9GB左右。对话时GPU占用是100%。
+实测MacBook Air M5 16GB，上下文开不到256K，只能开到25K左右，内存占用大约10GB左右。对话时GPU占用是100%。
 
 ![image-20260607212859660](https://static.wyclab.com/image-20260607212859660260607.png)
 
