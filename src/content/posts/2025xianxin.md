@@ -5,7 +5,7 @@ description: ''
 tags:
   - 金融
   - 政策
-heroImage: { src: 'https://static.wyc.cc/IMG_8453260506.webp', color: '#B4C6DA' }
+heroImage: { src: 'https://static.wyclab.com/IMG_8453260506.webp', color: '#B4C6DA' }
 draft: false
 ---
 

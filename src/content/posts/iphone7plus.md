@@ -52,7 +52,7 @@ draft: false
 
 - 5.5直营店取机
 
-![image3](https://static.wyc.cc/image3260425.webp)
+![image3](https://static.wyclab.com/image3260425.webp)
 
 拿回了几乎全新的手机，全新的主板还可以理解，还帮我换掉了已经用了一年的电池、满是划痕的屏幕，而服务单上写的“Apple Care”，明明是有钱人才会购买的“全方位服务计划”，为什么会提供给保修期内
 
