@@ -4,6 +4,8 @@ description: '怀孕期间的注意事项'
 order: 1
 ---
 
+
+
 import { Aside } from 'astro-pure/user'
 
 <Aside type='caution'>
@@ -29,7 +31,7 @@ import { Aside } from 'astro-pure/user'
 
 ## 二、 孕周概览
 
-![image-20260606214052190](/Users/wyc/Documents/GitHub/pureblog/src/assets/images/image-20260606214052190.png)
+![截屏2026-06-06 21.40.34](../../../assets/images/截屏2026-06-06 21.40.34.png)
 
 <Aside type='caution'>
   早期流产常常与染色体异常或其他胎儿生长问题有关——与你做了什么或没做什么基本不相关。
@@ -114,6 +116,10 @@ import { Aside } from 'astro-pure/user'
     * **某些精油与香水：**避免使用含有麝香、红花、薰衣草等具有活血或刺激宫缩作用的精油。
 * **化妆：**日常淡妆是安全的，注意彻底卸妆。尽量避免频繁染发、烫发和做指甲（避免接触甲醛、甲苯等挥发性有害物质）。
 
+“美丽修行“APP
+
+
+
 ## 七、 孕期禁忌品与药品安全
 
 ### 1. 绝对禁忌品
@@ -133,6 +139,8 @@ import { Aside } from 'astro-pure/user'
     * **感冒：**避免使用含有多种成分的复方感冒药，因为其中可能含有伪麻黄碱（收缩血管）等不利于胎儿的成分。
 * **慢性病管理：**如有甲状腺疾病、高血压、糖尿病等基础病，需在专科医生指导下调整孕期安全用药，切勿自行停药。
 
+
+
 ## 八、孕期常见症状
 
 ### 1. 需要就医的症状
@@ -147,6 +155,6 @@ import { Aside } from 'astro-pure/user'
 
 孕期子宫的逐渐增大，撑开了腹壁正中两条紧挨的、平行的肌肉（腹直肌），我们称之为“腹直肌分离”。
 
-![image-20260606221223168](/Users/wyc/Documents/GitHub/pureblog/src/assets/images/image-20260606221223168.png)
+![image-20260606221223168](../../../assets/images/image-20260606221223168.png)
 
 通常腹直肌分离是无须临床治疗的。但是医生会帮你评估腹直肌分离的严重程度，并且给予你分娩后的补救指导。
