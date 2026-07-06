@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets'
-
-import { Button, Collapse, Icon } from 'astro-pure/user'
+import { Collapse } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import ProjectSection from '@/components/projects/ProjectSection.astro'
 // import Sponsors from '@/components/projects/Sponsors.astro'
@@ -17,7 +15,7 @@ const headings = [
 ]
 ---
 
-<PageLayout title='Projects' {headings} view>
+<PageLayout title='Projects' {headings}>
   {/* About astro-pure 
   <div class='not-prose flex justify-center'>
     <a
