@@ -161,27 +161,6 @@ export const integ: IntegrationUserConfig = {
       className: 'zoomable'
     }
   },
-  // Comment system
-  waline: {
-    enable: true,
-    // Server service link
-    server: 'https://waline.wyclab.com',
-    // Show meta info for comments
-    showMeta: false,
-    // Refer https://waline.js.org/en/guide/features/emoji.html
-    emoji: ['bmoji', 'weibo'],
-    // Refer https://waline.js.org/en/reference/client/props.html
-    additionalConfigs: {
-      // search: false,
-      pageview: true,
-      comment: true,
-      locale: {
-        reaction0: '喜欢',
-        placeholder: '欢迎评论（邮箱可选，用于接收回复）'
-      },
-      imageUploader: false
-    }
-  }
 }
 
 export const terms: CardListData = {

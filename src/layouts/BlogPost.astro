@@ -11,7 +11,6 @@ import Hero from '@/components/Hero.astro'
 import Copyright from '@/components/Copyright.astro'
 import config from 'virtual:config'
 import PageLayout from '@/layouts/ContentLayout.astro'
-import { Comment, PageInfo } from '@/components/waline'
 
 interface Props {
   post: CollectionEntry<'blog'>
@@ -33,8 +32,7 @@ const {
   publishDate,
   title,
   updatedDate,
-  draft: isDraft,
-  comment: enableComment
+  draft: isDraft
 } = data
 
 const socialImage = heroImage
@@ -53,11 +51,7 @@ const primaryColor = data.heroImage?.color ?? 'hsl(var(--primary) / var(--un-tex
 >
   {!!headings.length && <TOC {headings} slot='sidebar' />}
 
-  <Hero {data} {remarkPluginFrontmatter} slot='header'>
-    <Fragment slot='description'>
-      {!isDraft && enableComment && <PageInfo comment class='mt-1' />}
-    </Fragment>
-  </Hero>
+  <Hero {data} {remarkPluginFrontmatter} slot='header' />
 
   <slot />
 
@@ -66,8 +60,6 @@ const primaryColor = data.heroImage?.color ?? 'hsl(var(--primary) / var(--un-tex
     <Copyright {data} />
     {/* Article recommend */}
     <ArticleBottom collections={posts} {id} class='mt-3 sm:mt-6' />
-    { /* Comment */
-    !isDraft && enableComment && <Comment class='mt-3 sm:mt-6' />}
   </Fragment>
 
   <slot name='bottom-sidebar' slot='bottom-sidebar' />
