@@ -161,6 +161,14 @@ export const integ: IntegrationUserConfig = {
       className: 'zoomable'
     }
   },
+  // Comment system (disabled)
+  waline: {
+    enable: false,
+    server: '',
+    showMeta: true,
+    emoji: [],
+    additionalConfigs: {}
+  },
 }
 
 export const terms: CardListData = {
