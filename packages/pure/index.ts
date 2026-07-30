@@ -1,13 +1,14 @@
 import { spawn } from 'node:child_process'
-import { dirname, relative } from 'node:path'
+import { existsSync } from 'node:fs'
+import { dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 // Astro
 import type { AstroIntegration, RehypePlugins, RemarkPlugins } from 'astro'
 // Integrations
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-import { AstroError } from 'astro/errors'
 import UnoCSS from '@unocss/astro'
+import { AstroError } from 'astro/errors'
 
 import rehypeExternalLinks from './plugins/rehype-external-links'
 import rehypeImageCaption from './plugins/rehype-image-caption'
@@ -100,15 +101,21 @@ export default function AstroPureIntegration(opts: UserInputConfig): AstroIntegr
 
       'astro:build:done': ({ dir }) => {
         if (!opts.integ.pagefind) return
-        const targetDir = fileURLToPath(dir)
+        const buildDir = fileURLToPath(dir)
+        const targetDir = existsSync(join(buildDir, 'client')) ? join(buildDir, 'client') : buildDir
         const cwd = dirname(fileURLToPath(import.meta.url))
         const relativeDir = relative(cwd, targetDir)
-        return new Promise<void>((resolve) => {
+        return new Promise<void>((resolve, reject) => {
           spawn('npx', ['-y', 'pagefind', '--site', relativeDir], {
             stdio: 'inherit',
             shell: true,
             cwd
-          }).on('close', () => resolve())
+          })
+            .on('error', reject)
+            .on('close', (code) => {
+              if (code === 0) resolve()
+              else reject(new Error(`Pagefind exited with code ${code}`))
+            })
         })
       }
     }
