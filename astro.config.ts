@@ -2,6 +2,9 @@ import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import AstroPureIntegration from 'astro-pure'
 import edgeone from '@edgeone/astro'
 import { defineConfig, fontProviders } from 'astro/config'
+import { execSync } from 'node:child_process'
+import { existsSync } from 'node:fs'
+import { join } from 'node:path'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 
@@ -21,6 +24,33 @@ import {
   transformerRemoveNotationEscape
 } from './src/plugins/shiki-official/transformers.ts'
 import config from './src/site.config.ts'
+
+// Generate the Pagefind search index as part of the Astro build,
+// so it works no matter what build command the hosting platform runs
+// (e.g. EdgeOne Pages may run `astro build` without the npm script).
+function pagefindIntegration() {
+  return {
+    name: 'pagefind-search-index',
+    hooks: {
+      'astro:build:done': () => {
+        // With the EdgeOne adapter, static assets land in dist/client
+        const siteDir = existsSync(join('dist', 'client', 'index.html'))
+          ? join('dist', 'client')
+          : 'dist'
+        // Skip if the index was already generated (e.g. by the npm script)
+        if (existsSync(join(siteDir, 'pagefind', 'pagefind-entry.json'))) {
+          console.log('[pagefind] index already exists, skipping')
+          return
+        }
+        console.log(`[pagefind] generating search index for ${siteDir} ...`)
+        // Call the local binary directly — `npx` may try the network in
+        // sandboxed CI environments (EdgeOne Pages) and stall silently
+        const pagefindBin = join('node_modules', '.bin', 'pagefind')
+        execSync(`"${pagefindBin}" --site "${siteDir}"`, { stdio: 'inherit' })
+      }
+    }
+  }
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -123,7 +153,8 @@ export default defineConfig({
     // astro-pure will automatically add sitemap, mdx & unocss
     // sitemap(),
     // mdx(),
-    AstroPureIntegration(config)
+    AstroPureIntegration(config),
+    pagefindIntegration()
   ],
 
   // [Experimental]
