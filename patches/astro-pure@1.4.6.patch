@@ -1,0 +1,30 @@
+diff --git a/index.ts b/index.ts
+index 9ff13b4932bfce195197cbba5938a054e7b2e743..f08559b6e7cfdf0599a4bc48431b2d5168756a03 100644
+--- a/index.ts
++++ b/index.ts
+@@ -98,18 +98,13 @@ export default function AstroPureIntegration(opts: UserInputConfig): AstroIntegr
+         })
+       },
+ 
+-      'astro:build:done': ({ dir }) => {
+-        if (!opts.integ.pagefind) return
+-        const targetDir = fileURLToPath(dir)
+-        const cwd = dirname(fileURLToPath(import.meta.url))
+-        const relativeDir = relative(cwd, targetDir)
+-        return new Promise<void>((resolve) => {
+-          spawn('npx', ['-y', 'pagefind', '--site', relativeDir], {
+-            stdio: 'inherit',
+-            shell: true,
+-            cwd
+-          }).on('close', () => resolve())
+-        })
++      'astro:build:done': () => {
++        // Patched: pagefind indexing is handled explicitly by the build script
++        // (`pagefind --site dist/client`) using the locally installed binary.
++        // The original `npx -y pagefind` call requires network access and hangs
++        // in sandboxed build environments (e.g. EdgeOne Pages), silently
++        // producing a deploy without any search index.
++        return
+       }
+     }
+   }
